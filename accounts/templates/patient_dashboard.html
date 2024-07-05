@@ -1,0 +1,87 @@
+{% extends "index.html" %}
+{% block start %}
+
+{% if user.is_authenticated and user.user_type == 'patient' %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .profile-picture {
+            width: 150px; 
+            height: 150px; 
+            border-radius: 5px; 
+            margin-left: 20px;  
+        }
+
+
+        .logout-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    </style>
+
+   
+</head>
+<body>
+    <div class="container">
+        <h4 class="display-5 text-center">
+            <span class="highlight"><b>Patient Dashboard</b></span>
+        </h4>
+        <div class="card">
+            <div class="card-body">
+                <h2 class="display-10 text-center">
+                    <h4><b>Welcome, {{ user.first_name }}</b></h4>
+        
+                </h2>
+                <div class="row">
+                    <div class="col-md-8">
+                        <ul>
+                            <li>Username: {{ user.username }}</li>
+                            <li>Email: {{ user.email }}</li>
+                            <li>First Name: {{ user.first_name }}</li>
+                            <li>Last Name: {{ user.last_name }}</li>
+                            <li>Address: {{ user.address_line1 }}, {{ user.city }}, {{ user.state }}, {{ user.pincode }}</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        {% if user.profile_picture %}
+                            <img src="{{ user.profile_picture.url }}" alt="Profile Picture" class="profile-picture">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a> 
+    </div>
+</body>
+</html>
+{% else %}
+    <p>You are not logged in as a patient.</p>
+{% endif %}
+
+{% endblock %}
