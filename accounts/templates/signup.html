@@ -4,9 +4,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Signup</title>
+    <title>Write Blog</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-     <a href="{% url 'home' %}" class="btn btn-primary">Home</a>
+    <style>
+        /* Style for the summary and content input fields (you can adjust this) */
+        #summary, #content {
+            display: block;
+            width: 100%; /* Use full width within the form container */
+            height: 150px; /* Increased height for better editing */
+            padding: 10px;
+            border: 1px solid #ced4da; /* Matches Bootstrap's input border */
+            border-radius: 10px; /* Standard Bootstrap border radius */
+            resize: vertical; /* Allow vertical resizing of the textarea */
+        }
+
+        /* Improved navbar styling */
+        .navbar {
+            background-color: #b4c1cf !important; /* Example background color */
+        }
+
+        .navbar .navbar-brand, 
+        .navbar .navbar-nav .nav-link {
+            color: rgb(143, 10, 10) !important;
+        }
+
+        .btn-primary {
+            background-color: #b79114 !important; /* Example green color */
+            border-color: #a1b4a5 !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark"> 
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Health Portal</a> 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+   
 </head>
 <body>
     <div class="container mt-5">
