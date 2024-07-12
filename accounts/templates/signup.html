@@ -6,6 +6,7 @@
 <head>
     <title>Signup</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <a href="{% url 'home' %}" class="btn btn-primary">Home</a>
 </head>
 <body>
     <div class="container mt-5">
@@ -19,8 +20,9 @@
                         <form method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
                             {{ form.as_p }}
-                            <p><b> Already have an account? </b><a href="/login/">Login</a></p>
+                            <p><b> Already have an account? </b><a href=" /login">Login</a></p>
                             <button type="submit" class="btn btn-primary">Signup</button>
+                           
                         </form>
                     </div>
                 </div>

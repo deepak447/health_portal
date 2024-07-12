@@ -1,0 +1,41 @@
+{% extends "index.html" %}
+{% block start %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="row"> 
+            {% for post in posts %}
+            <div class="col-md-4 mb-4">  <!-- **Here is where we added mb-4 for padding** -->
+                <div class="blog-post">
+                    <p>Posted By: {{ post.author.username }}</p>
+                    <div class="text-muted"> 
+                        <small> {{ post.date_created }}</small> 
+                    </div>
+                    <h4>{{ post.title }}</h4>
+                    <h5>{{ post.category }}</h5>
+                    
+                    {% if post.image %}
+                        <img src="{{ post.image.url }}" style="width: 100%; max-width: 200px; height: auto;" alt="Blog Image" class="blog-image">
+                    {% endif %}
+                    <!-- <h4>Content</h4>
+                    <p>{{ post.content }}</p> -->
+                    <!-- <h4>Summary</h4> -->
+                    <p>{{ post.summary }}</p> 
+                </div>
+            </div> 
+            {% endfor %} 
+        </div>
+
+    </div>
+</body>
+</html>
+
+
+{% endblock %} 

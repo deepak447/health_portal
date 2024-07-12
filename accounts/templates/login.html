@@ -4,10 +4,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Signup</title>
+    <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Style the navbar links */
+        .navbar-nav .nav-link {
+            color: #333; /* Dark gray for link text */
+        }
+
+        /* Style the buttons */
+        .navbar-nav .btn-primary {
+            background-color: #8ca23b; /* Blue background */
+            border-color: #c11120; /* Blue border */
+        }
+
+        .navbar-nav .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            border-color: #0056b3; 
+        }
+
+        /* Style for back/forward buttons in navbar */
+        .navbar-nav .nav-link.back-forward-btn {
+            padding: 0.375rem 0.5rem; /* Adjust padding as needed */
+        }
+    </style>
 </head>
 <body>
+    
+
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -20,18 +44,26 @@
                             {% csrf_token %}
                             {{ form.as_p }}
                             <button type="submit" class="btn btn-primary">Login</button>
-                            <p class="mt-3"><b>Don't have an account? </b><a href="/signup/">Signup</a></p>
+                            <p class="mt-3"><b>Don't have an account? </b><a href="/signup/">Signup</a></p> 
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        // Simple JavaScript for back/forward buttons
+        function goBack() {
+            window.history.back();
+        }
+
+        function goForward() {
+            window.history.forward();
+        }
+    </script> 
 </body>
 </html>
 
 {% endblock %}
-
-
-
 

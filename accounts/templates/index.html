@@ -1,19 +1,81 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <div class="header">
-                <h1 class="display-4 text-center">
-                    <span class="highlight"><b>Health Portal</b></span>
-                </h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Blog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
+    <style>
+        /* ... your other styles ... */
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: rgb(230, 138, 85) !important; /* Light blue background */
+        }
+
+        /* Style the navbar links */
+        .navbar-nav .nav-link {
+            color: #333; /* Dark gray for link text */
+        }
+
+        /* Style the buttons */
+        .navbar-nav .btn-primary {
+            background-color: #c8c0a8; /* Blue background */
+            border-color: #007bff; /* Blue border */
+        }
+
+        .navbar-nav .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            border-color: #0056b3; 
+        }
+
+        /* Style for back/forward buttons in navbar */
+        .navbar-nav .nav-link.back-forward-btn {
+            padding: 0.375rem 0.5rem; /* Adjust padding as needed */
+            color: white;  /* White text for back/forward buttons */
+        }
+
+        .navbar-nav .nav-link.back-forward-btn:hover {
+            color: #ddd; /* Lighter color on hover */
+        }
+
+        /* Health Portal Title Styling */
+        .navbar-brand {
+            font-weight: bold;
+            color: #28a745; /* Green color, adjust as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="header">
+                    <!-- <h1 class="display-4 text-center">
+                        <span class="highlight"><b>Health Portal</b></span>
+                        <br></br>
+                    </h1> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+                    {% block start %}
+                    {% endblock %}
+                </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="content">
-                {% block start %}
-                {% endblock %}
-            </div>
-        </div>
-    </div>
-</div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function goForward() {
+            window.history.forward();
+        }
+    </script>
+
+</body>
+</html>
